@@ -14,7 +14,9 @@ To design and implement an end-to-end AI-powered career assistance platform that
 Existing System :
 
 kickresume,resume.io,MyPerfectresume ,zety
+
 —----------------------------------------------------------------------------------------------------------------------------
+
 Tech stack:
 
 Layer
