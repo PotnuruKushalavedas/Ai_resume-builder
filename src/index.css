@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+
+/* =========================================================
+   CAREERAI DESIGN SYSTEM
+========================================================= */
+
+@theme {
+
+  /* Brand */
+
+  --color-brand-primary: #2563eb;
+
+  --color-brand-dark: #0f172a;
+
+  --color-brand-bg: #f8fafc;
+
+  --color-brand-text: #0f172a;
+
+  --color-brand-textSecondary: #64748b;
+
+  --color-brand-border: #e2e8f0;
+
+  --color-brand-success: #10b981;
+
+
+  /* Animations */
+
+  --animate-marquee: marquee 35s linear infinite;
+
+  --animate-float1: float1 5s ease-in-out infinite;
+
+  --animate-float2: float2 6s ease-in-out infinite 1s;
+
+  --animate-float3: float3 5s ease-in-out infinite 2s;
+
+  --animate-float4: float4 7s ease-in-out infinite 1.5s;
+
+
+  /* Marquee */
+
+  @keyframes marquee {
+
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+
+  }
+
+
+  /* Floating cards */
+
+  @keyframes float1 {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-9px);
+    }
+
+  }
+
+
+  @keyframes float2 {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-12px);
+    }
+
+  }
+
+
+  @keyframes float3 {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-7px);
+    }
+
+  }
+
+
+  @keyframes float4 {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+
+  margin: 0;
+
+  background-color: var(--color-brand-bg);
+
+  color: var(--color-brand-text);
+
+  font-family: "Inter", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: #cbd5e1;
+
+  border-radius: 999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+  background: #dbeafe;
+
+  color: #1e3a8a;
+
+}
+
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+
+@utility hide-scrollbar {
+
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+
+@utility glass-nav {
+
+  background-color: rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+
+}
+
+
+@utility glow-ai {
+
+  box-shadow:
+    0 0 30px -5px
+    rgba(37, 99, 235, 0.15);
+
+}
+
+
+@utility glow-ai-card {
+
+  box-shadow:
+    0 10px 30px -10px
+    rgba(37, 99, 235, 0.10);
+
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee-container:hover .marquee-content {
+
+  animation-play-state: paused;
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button,
+a {
+
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+}
