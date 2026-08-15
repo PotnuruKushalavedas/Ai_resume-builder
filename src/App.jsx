@@ -1,53 +1,68 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import CareerMarquee from "./components/CareerMarquee";
-import TemplateCarousel from "./components/TemplateCarousel";
-import CareerPlatform from "./components/CareerPlatform";
-import ATSAnalyzer from "./components/ATSAnalyzer";
-import HowItWorks from "./components/HowItWorks";
-import DocumentsSection from "./components/DocumentsSection";
-import FinalCTA from "./components/FinalCTA";
-import Footer from "./components/Footer";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import CareerMarquee from './components/CareerMarquee';
+import TemplateCarousel from './components/TemplateCarousel';
+import CareerPlatform from './components/CareerPlatform';
+import ATSAnalyzer from './components/ATSAnalyzer';
+import HowItWorks from './components/HowItWorks';
+import DocumentsSection from './components/DocumentsSection';
+import FinalCTA from './components/FinalCTA';
+import Footer from './components/Footer';
+
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import ResumeBuilder from './components/ResumeBuilder';
+
+function Home() {
   return (
-    <div className="min-h-screen bg-brand-bg font-sans text-brand-text">
+    <div className="min-h-screen bg-brand-bg flex flex-col font-sans">
       
-      {/* Header */}
       <Navbar />
 
-      <main>
-        
-        {/* Hero */}
+      <main className="flex-grow">
         <Hero />
 
-        {/* Career / Job roles marquee */}
         <CareerMarquee />
 
-        {/* Resume templates */}
         <TemplateCarousel />
 
-        {/* AI Career Platform */}
         <CareerPlatform />
 
-        {/* ATS Analyzer */}
         <ATSAnalyzer />
 
-        {/* How it works */}
         <HowItWorks />
 
-        {/* Documents */}
         <DocumentsSection />
 
-        {/* Final CTA */}
         <FinalCTA />
-
       </main>
 
-      {/* Footer */}
       <Footer />
 
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+
+      {/* Home */}
+      <Route path="/" element={<Home />} />
+
+      {/* Authentication */}
+      <Route path="/login" element={<Login />} />
+
+      {/* Dashboard */}
+      <Route path="/dashboard" element={<Dashboard />} />
+
+      {/* Resume Builder */}
+      <Route path="/resume-builder" element={<ResumeBuilder />} />
+
+    </Routes>
   );
 }
 

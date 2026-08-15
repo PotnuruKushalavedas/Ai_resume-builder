@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Sparkles,
   Menu,
@@ -127,45 +128,20 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-5 md:flex">
 
-            <a
-              href="#login"
-              className="
-                text-[14px]
-                font-semibold
-                text-slate-600
-                transition
-                hover:text-brand-primary
-              "
-            >
-              Login
-            </a>
-
-            <a
-              href="#get-started"
-              className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-lg
-                bg-brand-primary
-                px-5
-                py-2.5
-                text-[13px]
-                font-semibold
-                text-white
-                shadow-sm
-                shadow-blue-200
-                transition
-                hover:-translate-y-0.5
-                hover:bg-blue-700
-              "
-            >
-              Create Resume
-
-              <ArrowRight size={15} />
-
-            </a>
-
+            <Link
+            to="/login"
+            className="text-sm font-medium text-brand-textSecondary hover:text-brand-primary transition-colors duration-200"
+          >
+            Login
+          </Link>
+            
+      <Link
+        to="/login"
+        className="inline-flex items-center gap-1.5 justify-center px-4 py-2 text-sm font-medium text-white bg-brand-primary rounded-lg hover:bg-blue-700 transition-colors shadow-sm shadow-blue-200"
+      >
+        Create resume 
+        <ArrowRight size={15} />
+      </Link>
           </div>
 
 
@@ -245,46 +221,23 @@ export default function Navbar() {
 
           <div className="grid grid-cols-2 gap-3">
 
-            <a
-              href="#login"
-              onClick={() => setIsOpen(false)}
-              className="
-                flex
-                items-center
-                justify-center
-                rounded-lg
-                border
-                border-slate-200
-                px-4
-                py-2.5
-                text-sm
-                font-semibold
-                text-slate-600
-              "
-            >
-              Login
-            </a>
 
-            <a
-              href="#get-started"
-              onClick={() => setIsOpen(false)}
-              className="
-                flex
-                items-center
-                justify-center
-                gap-2
-                rounded-lg
-                bg-brand-primary
-                px-4
-                py-2.5
-                text-sm
-                font-semibold
-                text-white
-              "
-            >
-              Create Resume
-              <ArrowRight size={14} />
-            </a>
+          <Link
+            to="/login"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center px-4 py-2.5 rounded-lg border border-brand-border text-sm font-medium text-brand-text hover:bg-slate-50 transition-colors"
+          >
+            Login
+          </Link>
+
+                    <Link
+            to="/login"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand-primary text-sm font-medium text-white hover:bg-blue-700 transition-colors shadow-sm"
+          >
+            Create Resume
+            <ArrowRight size={14} />
+          </Link>
 
           </div>
 
